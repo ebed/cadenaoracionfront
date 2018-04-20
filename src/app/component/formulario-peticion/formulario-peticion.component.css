@@ -1,0 +1,12 @@
+.form-radio-group {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.form-radio-button {
+  margin: 5px;
+}
+
+.form-selected-value {
+  margin: 15px 0;
+}

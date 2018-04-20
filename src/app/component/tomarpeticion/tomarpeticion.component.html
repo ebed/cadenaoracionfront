@@ -1,0 +1,33 @@
+
+<mat-dialog-content class="peticion">
+
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <h3>PETICION:</h3> {{peticion.titulo}}
+      </mat-card-title>
+
+    </mat-card-header>
+    <mat-card-content>
+      <table width="100%">
+        <tr>
+          <td><h3>FECHA SOLICITUD: </h3></td>
+          <td>{{peticion.fechacreacion | date: 'dd/MM/yyyy'}}</td>
+        </tr>
+        <tr>
+          <td><h3>TIPO: </h3></td>
+          <td>{{peticion.tipo}}</td>
+        </tr>
+      </table>
+
+    </mat-card-content>
+  </mat-card>
+
+
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button (click)="acepto()">Acepto</button>
+  <br>
+  <button mat-raised-button (click)="noacepto()">No la tomo</button>
+
+</mat-dialog-actions>

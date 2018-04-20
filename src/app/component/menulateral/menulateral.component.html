@@ -1,0 +1,73 @@
+<mat-sidenav-container class="example-container" >
+
+  <mat-sidenav #sidenav mode="over" [(opened)]="opened" (opened)="events.push('open!')"
+               (closed)="events.push('close!')">
+    <mat-list>
+      <h2 mat-subheader>CADENA DE ORACIÓN</h2>
+      <p></p>
+      <button mat-button color="primary" (click)="setVista('perfil');  sidenav.toggle();">
+          <mat-list-item>
+            <mat-icon>account_circle</mat-icon>Mi Perfil
+          </mat-list-item>
+      </button><br>
+
+
+      <button mat-button color="primary" (click)="setVista('formularioPeticion');  sidenav.toggle();">
+        <mat-list-item>
+          <mat-icon>note_add</mat-icon>Crear Petición
+        </mat-list-item>
+      </button><br>
+
+      <button mat-button color="primary" (click)="setVista('grilla');  sidenav.toggle();">
+        <mat-list-item>
+          <mat-icon>list</mat-icon>Lista de Peticiones
+        </mat-list-item>
+      </button><br>
+
+
+      <button mat-button color="primary" (click)="setVista('listaPeticiones');  sidenav.toggle();">
+        <mat-list-item>
+          <mat-icon>list</mat-icon> Mis Peticiones
+        </mat-list-item>
+      </button><br>
+
+
+
+      <button mat-button color="primary" (click)="setVista('listaIntercesiones');  sidenav.toggle();">
+        <mat-list-item>
+          <mat-icon>list</mat-icon>Mis Intercesiones
+        </mat-list-item>
+      </button>
+
+      <mat-divider></mat-divider>
+
+      </mat-list>
+
+  </mat-sidenav>
+
+    <mat-sidenav-content>
+      <table class="encabezadoprincipal">
+        <tr>
+          <td width="5%"><button mat-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button></td>
+          <td colspan="8"></td>
+          <td width="5%"><button mat-button color="primary" (click)="logout()"><mat-icon>exit_to_app</mat-icon></button> </td>
+        </tr>
+
+      </table>
+
+    <mat-divider></mat-divider>
+    <app-grillapeticiones *ngIf="vista==='grilla'"></app-grillapeticiones>
+    <app-perfil *ngIf="vista==='perfil'" ></app-perfil>
+    <app-formulario-peticion *ngIf="vista==='formularioPeticion'"></app-formulario-peticion>
+    <app-bandejaentrada *ngIf="vista==='listaPeticiones'"></app-bandejaentrada>
+
+    <app-bandejasalida *ngIf="vista==='listaIntercesiones'"></app-bandejasalida>
+
+
+
+
+
+
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

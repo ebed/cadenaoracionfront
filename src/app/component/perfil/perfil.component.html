@@ -1,0 +1,43 @@
+<mat-card class="card-perfil">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>MI PERFIL</mat-card-title>
+    <mat-card-subtitle>Mis datos personales</mat-card-subtitle>
+
+  </mat-card-header>
+
+  <mat-card-content>
+    <form class="perfil-form">
+
+
+
+      <mat-form-field class="perfil-full-width">
+        <input matInput placeholder="Nombre"  [(ngModel)]="usuario.nombre" name="nombre">
+      </mat-form-field>
+
+      <mat-form-field class="perfil-full-width">
+        <input matInput placeholder="Apellido"   [(ngModel)]="usuario.apellido" name="apellido">
+      </mat-form-field>
+
+      <mat-form-field class="perfil-full-width">
+        <input matInput placeholder="Correo"   [(ngModel)]="usuario.email" name="email" disabled>
+      </mat-form-field>
+
+      <mat-form-field class="perfil-full-width">
+        <input matInput placeholder="Nombre de Usuario"  [(ngModel)]="usuario.username" name="username" >
+      </mat-form-field>
+<!--
+<br>
+      Datos personales
+      <mat-radio-group>
+        <mat-radio-button value="1">Privados</mat-radio-button>
+        <mat-radio-button value="2">Publicos</mat-radio-button>
+      </mat-radio-group>
+
+ -->   </form>
+
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-raised-button  (click)="update()" color="primary">Guardar</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,47 @@
+<mat-card>
+
+  <mat-card-header>
+    <mat-card-title><h3>PETICIONES</h3></mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+      <div class="example-container mat-elevation-z8">
+        <mat-table #table [dataSource]="dataSource">
+
+          <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+
+          <!-- Position Column -->
+          <ng-container matColumnDef="titulo">
+            <mat-header-cell *matHeaderCellDef> Titulo </mat-header-cell>
+            <mat-cell *matCellDef="let peticion"> {{peticion.titulo}} </mat-cell>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="tipo">
+            <mat-header-cell *matHeaderCellDef> Tipo </mat-header-cell>
+            <mat-cell *matCellDef="let peticion"> {{peticion.tipo}} </mat-cell>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="estado">
+            <mat-header-cell *matHeaderCellDef> Estado </mat-header-cell>
+            <mat-cell *matCellDef="let peticion"> {{peticion.estado}} </mat-cell>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="usuario">
+            <mat-header-cell *matHeaderCellDef> Usuario </mat-header-cell>
+            <mat-cell *matCellDef="let peticion"> {{peticion.usuario}} </mat-cell>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="fechacreacion">
+            <mat-header-cell *matHeaderCellDef> Fecha Creacion </mat-header-cell>
+            <mat-cell *matCellDef="let peticion"> {{peticion.fechacreacion | date: 'dd/MM/yyyy'}} </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selecciona(row)"></mat-row>
+        </mat-table>
+      </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,13 @@
+td.fechamensaje {
+  font-size: 0.7rem;
+  text-align: right;
+}
+.contenidomensaje {
+  font-size: 0.8rem;
+}
+td {
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: wrap;
+}

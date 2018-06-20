@@ -1,0 +1,58 @@
+
+<div>
+
+
+  <div class="botonagregar">
+    <mat-icon  class="agregar nuevo" (click)="addPeticion()">add_circle</mat-icon>
+  </div>
+
+
+  <div class="contenedorlista contenedorlista_mispeticiones">
+
+    <mat-spinner class="spinnergrilla" *ngIf="spinerOn===true"></mat-spinner>
+
+
+ <!--   <virtual-scroll [items]="mispeticiones" (update)="viewPortPeticiones = $event">
+
+      <mat-card *ngFor="let peticion of viewPortPeticiones" class="peticiones-tarjeta "  >
+
+      -->
+    <mat-card *ngFor="let peticion of mispeticiones" class="peticiones-tarjeta "  >
+        <mat-card-header>
+          <img mat-card-avatar class="perfil-image-peticion"  [src]="peticion.avatar"  *ngIf="peticion.avatar!== null">
+          <mat-icon mat-card-avatar  class="perfil-icono-peticion" *ngIf="peticion.avatar === null">face</mat-icon>
+          <mat-card-title>
+
+            <h4 mat-line>{{peticion.titulo}}</h4>
+            <h5 mat-line>{{peticion.nombre}}</h5>
+            <h6 mat-line> {{peticion.fechacreacion | date: 'dd/MM/yyyy' }} </h6>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+
+          <p mat-line> {{peticion.descripcion }} </p>
+        </mat-card-content>
+
+        <mat-card-actions align="center">
+
+          <button mat-raised-button color="primary"  class='botones'  (click)="elimina(peticion.id)">Cancelar</button>
+          <button mat-raised-button color="primary"  class='botones'  (click)="enviarmensaje(peticion)"> <mat-icon  >message</mat-icon></button>
+          <button mat-raised-button color="primary"  class='botones'  (click)="finaliza(peticion.id)">Finalizada</button>
+
+        </mat-card-actions>
+
+      </mat-card>
+      <br/>
+  <!--  </virtual-scroll> -->
+  </div>
+
+
+
+
+
+</div>
+
+
+<!--
+
+-->

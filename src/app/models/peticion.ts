@@ -9,5 +9,6 @@ export class Peticion {
   usuario_id: number;
   fechacreacion: string;
   descripcion: string;
+  avatar: string;
 
 }

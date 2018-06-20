@@ -1,0 +1,43 @@
+
+
+<div class="contenedorlista contenedorlista_mispeticiones">
+
+  <mat-spinner class="spinnergrilla" *ngIf="spinerOn===true"></mat-spinner>
+
+
+ <!-- <virtual-scroll [items]="dataSource" (update)="viewPortItemsCompromisos = $event">
+
+    <div *ngFor="let compromiso of viewPortItemsCompromisos">
+-->
+  <div *ngFor="let compromiso of dataSource">
+      <div class="botoncierre">
+        <mat-icon  class="cierre alerta" (click)="cancela(compromiso.id)">cancel</mat-icon>
+      </div>
+
+      <mat-card  class="peticiones-tarjeta" >
+        <mat-card-header>
+
+          <img mat-card-avatar class="perfil-image-peticion"  [src]="compromiso.avatar"  *ngIf="compromiso.avatar!== null">
+          <mat-icon mat-card-avatar  class="perfil-icono-peticion" *ngIf="compromiso.avatar === null">face</mat-icon>
+
+          <mat-card-title>
+
+            <h4 mat-line>{{compromiso.titulo}}</h4>
+            <p mat-line> {{compromiso.fechacreacion | date: 'dd/MM/yyyy' }} </p>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+
+          <p mat-line> {{compromiso.descripcion }} </p>
+        </mat-card-content>
+        <mat-card-actions>
+
+        </mat-card-actions>
+      </mat-card>
+
+    </div>
+    <br/>
+ <!-- </virtual-scroll> -->
+
+</div>
+

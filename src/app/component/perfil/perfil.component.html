@@ -1,8 +1,31 @@
-<mat-card class="card-perfil">
+
+
+<mat-card class=" cards card-perfil">
   <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>MI PERFIL</mat-card-title>
-    <mat-card-subtitle>Mis datos personales</mat-card-subtitle>
+
+
+        <label mat-card-avatar class="perfil-image"     for="input-file-id">
+
+          <img mat-card-avatar class="perfil-image"  [src]="usuario.avatar"   *ngIf="usuario.avatar!== null">
+
+          <mat-icon mat-card-avatar  class="perfil-icono-peticion" *ngIf="usuario.avatar === null">face</mat-icon>
+
+
+          <div class="iconoedicion" >Cambia Imagen</div>
+
+
+        </label>
+
+
+    <input  id="input-file-id"    type="file" [hidden]="true" accept="image/*" (change)="upload($event)"/>
+
+
+    <mat-card-title><h3>Mis datos personales
+
+    </h3>  </mat-card-title>
+
+
+
 
   </mat-card-header>
 

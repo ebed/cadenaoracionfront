@@ -1,0 +1,40 @@
+
+    <mat-grid-list cols="4" rowHeight="30px">
+      <mat-grid-tile [colspan]="2" class="titulocelda"><h4>Peticion</h4></mat-grid-tile>
+      <mat-grid-tile  [colspan]="2" class="contenidocelda">{{peticion.titulo}}</mat-grid-tile>
+
+      <mat-grid-tile [colspan]="2" class="titulocelda"><h4>Usuario</h4></mat-grid-tile>
+      <mat-grid-tile  [colspan]="2" class="contenidocelda">{{peticion.usuario}}</mat-grid-tile>
+
+      <mat-grid-tile [colspan]="2" class="titulocelda"><h4>Fecha creación</h4></mat-grid-tile>
+      <mat-grid-tile  [colspan]="2" class="contenidocelda">{{peticion.fechacreacion | date: 'dd/MM/yyyy'}}</mat-grid-tile>
+
+
+
+      <mat-grid-tile [colspan]="4" class="descripcion" rowHeight="100px">
+        <mat-card class="descripcion-card">
+          <mat-card-header>
+            <mat-card-title>
+              Descripción
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            {{peticion.descripcion}}
+          </mat-card-content>
+        </mat-card>
+
+      </mat-grid-tile>
+
+      <mat-grid-tile [colspan]="2">
+        <button mat-raised-button color="primary" (click)="acepto()">Tomar Petición</button>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="2">
+        <button mat-raised-button color="primary" (click)="acepto()">Enviar mensaje</button>
+      </mat-grid-tile>
+
+    </mat-grid-list>
+
+
+
+
+

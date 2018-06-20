@@ -9,6 +9,12 @@
   "installed_plugins": {
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "cl.ouzomapps.oracion"
+    },
+    "cordova-plugin-crosswalk-webview": {
+      "PACKAGE_NAME": "cl.ouzomapps.oracion"
+    },
+    "cordova-android-support-gradle-release": {
+      "PACKAGE_NAME": "cl.ouzomapps.oracion"
     }
   },
   "dependent_plugins": {}

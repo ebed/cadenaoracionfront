@@ -4,7 +4,8 @@ import {Observable} from "rxjs/Observable";
 
 @Injectable()
 export class ApiService {
-  API_URL = 'http://localhost:3000/';
+  API_URL = 'https://cadenaoracion.herokuapp.com/';
+  //API_URL = 'http://localhost:3000/';
 
   constructor(public http: HttpClient) { }
   // read method
@@ -31,7 +32,7 @@ export class ApiService {
 
     const endpoint = this.API_URL + path;
 
-    console.log(body);
+
     return this.http.post(endpoint, body,{headers: httpHeaders});
 
   }
@@ -57,5 +58,15 @@ export class ApiService {
 
     const endpoint = this.API_URL + path;
     return this.http.put(endpoint, body,{headers: httpHeaders});
+  }
+
+  public request(path: string, body: any) {
+    const token = localStorage.getItem('auth-token');
+    const authtoken = 'token ' + token;
+    const httpHeaders = new HttpHeaders()
+      .set('Authorization', authtoken);
+
+    const endpoint = this.API_URL + path;
+    return this.http.post(endpoint, body,{headers: httpHeaders});
   }
 }

@@ -1,33 +1,60 @@
 
-<mat-dialog-content class="peticion">
 
-  <mat-card>
+
+<div class="nombrevista">
+  <div class="volver">
+
+  </div>
+  &nbsp;
+
+</div>
+
+<table class="encabezadoprincipal opcionesapp" width="100%">
+  <tr>
+    <td>
+
+    </td>
+    <td align="left" class="opcion"  >
+      <mat-icon (click)="cancelar()">keyboard_backspace</mat-icon>
+    </td>
+
+    <td class="titulopeticion">
+     Envio de Mensaje
+    </td>
+
+
+
+  </tr>
+
+</table>
+
+
+
+  <mat-card *ngIf="vista==='mensaje'">
     <mat-card-header>
       <mat-card-title>
-        <h3>PETICION:</h3> {{peticion.titulo}}
+        <h3>Peticion: {{peticion.titulo}}</h3>
       </mat-card-title>
 
     </mat-card-header>
     <mat-card-content>
-      <table width="100%">
-        <tr>
-          <td><h3>FECHA SOLICITUD: </h3></td>
-          <td>{{peticion.fechacreacion | date: 'dd/MM/yyyy'}}</td>
-        </tr>
-        <tr>
-          <td><h3>TIPO: </h3></td>
-          <td>{{peticion.tipo}}</td>
-        </tr>
-      </table>
+      <mat-form-field class="form-full-width">
+        <textarea matInput placeholder="Ingrese mensaje" matTextareaAutosize matAutosizeMinRows="4" [(ngModel)]="mensaje" name="mensaje"></textarea>
+      </mat-form-field>
+
+      <mat-icon (click)="enviar()">send</mat-icon>
+      <mat-icon (click)="cancelar()">cancel</mat-icon>
 
     </mat-card-content>
+
+    <mat-card-actions align="center">
+
+      <button mat-raised-button color="primary"  class='botones'  (click)="enviar(peticion.id)"><mat-icon >send</mat-icon>Enviar</button>
+      <button mat-raised-button color="primary"  class='botones'  (click)="cancelar(peticion)"> <mat-icon  >cancel</mat-icon>Cerrar</button>
+
+    </mat-card-actions>
   </mat-card>
 
 
-</mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-raised-button (click)="acepto()">Acepto</button>
-  <br>
-  <button mat-raised-button (click)="noacepto()">No la tomo</button>
 
-</mat-dialog-actions>
+

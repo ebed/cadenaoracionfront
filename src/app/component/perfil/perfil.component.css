@@ -8,12 +8,49 @@
 .perfil-full-width {
   width: 100%;
 }
-.example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover;
+.perfil-image {
+  width: 70px;
+  height: auto;
+  cursor: pointer;
 }
 
 
 .card-perfil {
   max-width: 400px;
+}
+
+.cards {
+  margin:0 auto;
+  height: 100%;
+}
+
+.iconoedicion {
+  position: relative;
+  top: -20px;
+  left: 0px;
+  font-size: 0.7rem;
+  color: white;
+  font-weight: bolder;
+  background-color: steelblue;
+  text-align: center;
+  transition: 0.5s;
+}
+.iconoedicion:hover {
+  background-color: #D6E0FF;
+  color: #0f0f0f;
+
+}
+
+mat-icon.mat-icon.material-icons {
+  font-size: 65px;
+  margin: 4px;
+  color: red;
+  top: -5px;
+
+}
+
+.logout {
+  position: relative;
+  float: right;
+  top: -14px;
 }

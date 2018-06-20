@@ -1,0 +1,21 @@
+
+
+<h4>{{mensajes[0].peticion}}</h4>
+
+
+  <div *ngFor="let mensaje of mensajes">
+
+    <mat-divider></mat-divider>
+
+     <table width="100%">
+       <tr>
+         <td colspan="2" class="contenidomensaje"> <b class="nombreusuario">{{mensaje.usuario}}:</b> {{mensaje.contenido}}</td>
+       </tr>
+       <tr>
+         <td></td><td class="fechamensaje"> {{mensaje.fecha | date: "dd/MM/yyyy"}} </td>
+       </tr>
+     </table>
+
+
+  </div>
+

@@ -1,3 +1,4 @@
+<!--
 <mat-sidenav-container class="example-container" >
 
   <mat-sidenav #sidenav mode="over" [(opened)]="opened" (opened)="events.push('open!')"
@@ -11,6 +12,13 @@
           </mat-list-item>
       </button><br>
 
+
+      <button mat-button color="primary" (click)="setVista('mensajes');  sidenav.toggle();">
+        <mat-list-item>
+          <mat-icon>email</mat-icon>Mensajería
+        </mat-list-item>
+      </button>
+      <br>
 
       <button mat-button color="primary" (click)="setVista('formularioPeticion');  sidenav.toggle();">
         <mat-list-item>
@@ -39,6 +47,10 @@
         </mat-list-item>
       </button>
 
+
+
+
+
       <mat-divider></mat-divider>
 
       </mat-list>
@@ -46,28 +58,67 @@
   </mat-sidenav>
 
     <mat-sidenav-content>
-      <table class="encabezadoprincipal">
+-->
+
+
+ <div class="nombrevista">{{nombrevista}} &nbsp;
+   <div class="logout">
+    <mat-icon class="exit" (click)="logout()">exit_to_app</mat-icon>
+   </div>
+ </div>
+
+      <table class="encabezadoprincipal opcionesapp" *ngIf="vistaprincipal()">
         <tr>
-          <td width="5%"><button mat-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button></td>
-          <td colspan="8"></td>
-          <td width="5%"><button mat-button color="primary" (click)="logout()"><mat-icon>exit_to_app</mat-icon></button> </td>
+          <td align="center" class="opcion" (click)="setVista('grilla')">
+            <mat-icon>cloud</mat-icon>
+          </td>
+
+          <td align="center"   class="opcion" (click)="setVista('mispeticiones')">
+
+            <mat-icon>whatshot</mat-icon>
+
+          </td>
+
+          <td align="center" class="opcion" (click)="setVista('mensajes')">    <mat-icon>chat</mat-icon>  </td>
+
+          <td align="center" class="opcion" (click)="setVista('perfil')">
+            <mat-icon>face</mat-icon>
+           <!-- <img mat-card-avatar class="perfil-image"  [src]="avatar"  width="30px" >  -->
+          </td>
+
+        </tr>
+
+      </table>
+      <table class="encabezadoprincipal opcionesapp" width="100%" *ngIf="!vistaprincipal()">
+        <tr>
+          <td align="left" class="opcionvolver" >
+            <button mat-button (click)="volver()">
+              <mat-icon class="iconovolver" >keyboard_backspace</mat-icon>
+
+            </button>
+          </td>
+          <td>
+
+          </td>
+
+          <td class="titulopeticion">
+            {{titulo}}
+          </td>
         </tr>
 
       </table>
 
-    <mat-divider></mat-divider>
-    <app-grillapeticiones *ngIf="vista==='grilla'"></app-grillapeticiones>
-    <app-perfil *ngIf="vista==='perfil'" ></app-perfil>
-    <app-formulario-peticion *ngIf="vista==='formularioPeticion'"></app-formulario-peticion>
-    <app-bandejaentrada *ngIf="vista==='listaPeticiones'"></app-bandejaentrada>
 
-    <app-bandejasalida *ngIf="vista==='listaIntercesiones'"></app-bandejasalida>
-
-
-
-
-
-
+    <app-grillapeticiones *ngIf="isVisible('grilla')"></app-grillapeticiones>
+    <app-perfil *ngIf="isVisible('perfil')" ></app-perfil>
+    <app-peticiones *ngIf="isVisible('mispeticiones')"></app-peticiones>
+  <!--  <app-formulario-peticion *ngIf="isVisible('formularioPeticion')"></app-formulario-peticion> -->
+    <app-leerpeticion *ngIf="isVisible('leerpeticion')"></app-leerpeticion>
+    <app-mensajes *ngIf="isVisible('mensajes')"></app-mensajes>
+    <app-formulariomensaje *ngIf="isVisible('enviarmensaje')"></app-formulariomensaje>
+    <app-lecturamensajes *ngIf="isVisible('leermensaje')"></app-lecturamensajes>
+<!--
 
   </mat-sidenav-content>
 </mat-sidenav-container>
+-->

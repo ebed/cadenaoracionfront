@@ -10,13 +10,51 @@
 }
 
 
-.login-card {
-  top: 150px;
-  width: 300px;
+.cards {
+
+  width: 250px;
   margin:0 auto;
+  -webkit-border-radius: 10px 10px;  /* Safari  */
+  -moz-border-radius: 10px 10px;     /* Firefox */
+  border: 0;
+}
+
+.spinnerlogin {
+  margin:0 auto;
+  position: relative;
+  top: 300px;
+
+}
+
+
+.login-card {
+  top: 100px;
+  background-color: #fff;
+
+}
+
+
+.register-card {
+  top: 50px;
 }
 .button-row {
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+
+button {
+  -webkit-border-radius: 5px 10px;  /* Safari  */
+  -moz-border-radius: 5px 10px;     /* Firefox */
+}
+
+mat-card-header.mat-card-header {
+  /* background-color: #fafafa; */
+  padding: 0px;
+  border-bottom: 2px solid #dadada;
+  margin-bottom: 29px;
+}
+
+.button-row {
+  padding: 15px;
 }

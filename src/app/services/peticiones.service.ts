@@ -35,4 +35,27 @@ export class PeticionesService {
 
     return this.apiService.post('peticiones', peticion)
   }
+
+
+  public cancelaPeticion(id) {
+    console.log("Cancela");
+
+    const peticion = new Peticion();
+    peticion.id = id;
+    return this.apiService.post('peticiones/cancela',peticion);
+  }
+
+  public finalizaPeticion(id){
+    console.log("Finaliza");
+    const peticion = new Peticion();
+    peticion.id = id;
+    return this.apiService.post('peticiones/finaliza',peticion);
+  }
+
+  public anulaIntercesion(id){
+    const peticion = new Peticion();
+    peticion.id = id;
+    peticion.usuario_id = parseInt(localStorage.getItem("usuarioid"),10);
+    return this.apiService.post('peticiones/cancelaintercesion',peticion);
+  }
 }

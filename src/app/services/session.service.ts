@@ -16,18 +16,14 @@ export class SessionService {
     const usuario = new Usuario();
     usuario.email = email;
     usuario.password = passwd;
-
-    this.apiService.post('auth/login',usuario).subscribe( data => {
-      console.log(data);
-      this.logged = true;
-      this.token = data['access_token'];
-      console.log(this.token);
-      localStorage.setItem('auth-token', this.token);
-      localStorage.setItem('usuarioid', data['usuario']['id']);
-    })
+    return this.apiService.post('auth/login',usuario);
 
   }
 
+  public loginSession(token) {
+    this.logged = true;
+    this.token = token;
+  }
 
   public logout() {
     this.logged = false;
@@ -35,7 +31,7 @@ export class SessionService {
   }
 
   public isLogged() {
-    return this.logged;
+    return  (localStorage.getItem('auth-token')!== '');
   }
 
 

@@ -4,4 +4,6 @@ export class Usuario {
   username: string;
   email: string;
   password: string;
+  avatar: any;
+  image: any;
 }

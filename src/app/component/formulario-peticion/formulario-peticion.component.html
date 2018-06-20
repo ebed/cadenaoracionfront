@@ -1,40 +1,72 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>Nueva Peticion de Oración</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
 
-    <form class="formulario">
-      <mat-form-field class="full-width">
-        <input matInput placeholder="Titulo de petición" [(ngModel)]="titulo"  name="titulo">
-      </mat-form-field>
-      <p></p>
-      <mat-form-field class="full-width">
 
-      <textarea matInput placeholder="Descripción de la peticion de Oración" matTextareaAutosize matAutosizeMinRows="2"
-            matAutosizeMaxRows="5" [(ngModel)]="descripcion" name="descripcion"></textarea>
-      </mat-form-field>
+  <div class="botoncierre">
+    <mat-icon  class="cierre alerta" (click)="cerrarDialogo ()">cancel</mat-icon>
+  </div>
 
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title>Tipo de petición</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <mat-radio-group class="form-radio-group" [(ngModel)]="tiposeleccionado" name="tiposeleccionado">
+  <div class="nombrevista">
+    <div class="volver">
 
-            <mat-radio-button class="form-radio-button" *ngFor="let tipo of tipos" value="{{tipo.id}}">
-              {{tipo.nombre}}
-            </mat-radio-button>
-          </mat-radio-group>
-        </mat-card-content>
+    </div>
+    &nbsp;
+
+  </div>
+
+  <table class="encabezadoprincipal opcionesapp" width="100%">
+    <tr>
+      <td>
+
+      </td>
+      <td align="left" class="opcion"  >
+        <mat-icon (click)="cerrarDialogo()">keyboard_backspace</mat-icon>
+      </td>
+
+      <td class="titulopeticion">
+        Nueva Petición
+      </td>
 
 
 
-      </mat-card>
-      <mat-card-actions>
-        <button mat-raised-button color="primary" (click)="ingresaPeticion()">Envía Petición</button>
-      </mat-card-actions>
+    </tr>
 
-    </form>
-  </mat-card-content>
-</mat-card>
+  </table>
+  <div>
+      <form class="formulario">
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Titulo de petición" [(ngModel)]="titulo"  name="titulo">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field class="full-width">
+
+        <textarea matInput placeholder="Descripción de la peticion de Oración" matTextareaAutosize matAutosizeMinRows="2"
+              matAutosizeMaxRows="5" [(ngModel)]="descripcion" name="descripcion"></textarea>
+        </mat-form-field>
+
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Tipo de petición</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <mat-radio-group class="form-radio-group" [(ngModel)]="tiposeleccionado" name="tiposeleccionado">
+
+              <mat-radio-button class="form-radio-button" *ngFor="let tipo of tipos" value="{{tipo.id}}">
+                {{tipo.nombre}}
+              </mat-radio-button>
+            </mat-radio-group>
+          </mat-card-content>
+
+
+
+        </mat-card>
+
+
+      </form>
+
+    <div align="center">
+
+      <br/>
+      <button mat-raised-button color="primary" (click)="ingresaPeticion()">Envía Petición</button>
+
+    </div>
+
+  </div>

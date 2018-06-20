@@ -16,4 +16,6 @@ export class AppComponent {
     return this.sesionService.isLogged();
   }
 
+
+  /* todo: Agregar NOTIFICAIONES PUSH */
 }

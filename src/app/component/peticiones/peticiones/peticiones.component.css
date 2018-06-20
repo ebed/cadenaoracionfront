@@ -1,0 +1,83 @@
+mat-cell {
+  font-size: 0.6rem;
+}
+
+.spinnergrilla {
+  margin: 0 auto;
+  position: relative;
+  top: 200px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+  width: 80px;
+  height: auto;
+}
+.peticiones-tarjeta {
+  margin: 5px;
+
+  -webkit-border-radius: 25px 25px;
+  -moz-border-radius: 25px 25px;
+}
+
+mat-card-content.mat-card-content {
+
+  padding-top: 5px;
+}
+
+.perfil-image-peticion {
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+}
+
+
+button {
+  -webkit-border-radius: 10px 10px;  /* Safari  */
+  -moz-border-radius: 10px 10px;     /* Firefox */
+}
+
+
+
+.botonagregar {
+  float: right;
+}
+
+.agregar {
+  top: 5px;
+  position: relative;
+  right: 35px;
+  z-index: 100;
+}
+
+
+.nuevo {
+  color: #7d7dff;
+  font-size: 3rem;
+}
+
+.alerta {
+  color: red;
+}
+
+.contenedorlista {
+  margin-top: 30px;
+}
+.botoncierre {
+  position: relative;
+  float: right;
+}
+
+.cierre {
+  top: 4px;
+  position: relative;
+  font-size: 30px;
+  right: 20px;
+  z-index: 10;
+}
+virtual-scroll {
+  display: block;
+  width: 100%;
+
+}

@@ -10,3 +10,87 @@
 .form-selected-value {
   margin: 15px 0;
 }
+
+.alerta {
+  color: red;
+}
+
+.botones {
+  padding: 5px;
+  -webkit-border-radius: 10px 10px;  /* Safari  */
+  -moz-border-radius: 10px 10px;     /* Firefox */
+}
+
+.botoncierre {
+  float: right;
+}
+
+.cierre {
+  top: -28px;
+  right: -12px;
+  position: relative;
+}
+
+mat-icon.mat-icon.material-icons {
+  font-size: 40px;
+  margin: 4px;
+
+}
+
+
+.encabezadoprincipal {
+  height: 50px;
+  width: 100%;
+}
+.opcionesapp {
+  border: 1px solid #2590e4;
+  background-color: #259ff8;
+  position: relative;
+  top: -10px;
+
+}
+
+.opcion {
+  transition: 0.5s;
+}
+.opcion:hover {
+  border: 0.2px solid #ffffff;
+  color: white;
+}
+mat-icon.mat-icon.material-icons {
+  font-size: 20px;
+  margin-top: 10px;
+  color: #fff    ;
+}
+mat-icon.exit {
+  color: red !important;
+}
+.logout {
+  float: right;
+  top: -10px;
+  right: -10px;
+  position: relative;
+}
+
+.nombrevista {
+  font-size: 1rem;
+  padding: 10px;
+  background: #259ff8;
+  color: white;
+  font-weight: 900;
+  text-align: right;
+  padding-right: 33px;
+}
+.volver {
+  float: left;
+  top: -10px;
+  right: -10px;
+  position: relative;
+}
+
+.titulopeticion {
+  color: white;
+}
+form.formulario  {
+  padding: 10px 40px 0px 40px;
+}

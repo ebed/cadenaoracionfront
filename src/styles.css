@@ -12,3 +12,104 @@
   width: 100%;
 }
 
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #fff;
+  margin:0px;
+
+  height:100%;
+
+}
+
+html, body {
+  margin:0;
+  padding:0;
+  height:100%;
+}
+.mat-fab.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {
+  background-color: #229ccb;
+
+}
+
+span.mat-button-wrapper {
+  color: #fff;
+  font-weight: bolder;
+}
+
+
+h2, h3, h4, h5, h6 {
+  color: #6f7980;
+}
+
+mat-card.mat-card {
+  background-color: #fff;
+}
+.contenedorlista {
+  overflow: auto;
+  margin: 0 10px 0 10px;
+  position:fixed !important;
+  position:absolute;
+
+  right:0;
+  bottom:0;
+  left:0;
+}
+
+p {
+  font-size: 0.8rem;
+  color: #80766f;
+}
+
+
+span.mat-button-wrapper {
+  color: white;
+  font-weight: bolder;
+  font-size: 0.8rem;
+}
+
+.mat-tab-header {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  height: 40px;
+}
+.contenedorlista_mispeticiones {
+  top: 120px;
+}
+
+.contenedorlista_peticiones {
+
+  top:90px;
+
+}
+.mat-card-header-text {
+  margin: 0 8px;
+  width: 100%;
+  top: -5px;
+  position: relative;
+}
+
+.mat-line {
+  margin: 5px;
+}
+.mat-list .mat-list-item .mat-list-item-content, .mat-list .mat-list-option .mat-list-item-content, .mat-nav-list .mat-list-item .mat-list-item-content, .mat-nav-list .mat-list-option .mat-list-item-content, .mat-selection-list .mat-list-item .mat-list-item-content, .mat-selection-list .mat-list-option .mat-list-item-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 5px;
+  position: relative;
+  height: inherit;
+}
+
+
+.perfil-icono-peticion  {
+  font-size: 49px;
+  position: relative;
+  top: -5px;
+}
+mat-dialog-container[id^='mat-dialog-']{
+  padding: 0;
+  height:100vh;
+}

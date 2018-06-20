@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {FormBuilder, FormControl} from "@angular/forms";
-import {ApiService} from "../../services/api.service";
 import {TiposService} from "../../services/tipos.service";
 import {Tipo} from "../../models/tipo";
-import {Peticion} from "../../models/peticion";
 import {PeticionesService} from "../../services/peticiones.service";
+import {MAT_DIALOG_DATA, MatDialogRef, MatSnackBar} from "@angular/material";
+import {VistaService} from "../../services/vista.service";
+import {ApiService} from "../../services/api.service";
 
 @Component({
   selector: 'app-formulario-peticion',
@@ -16,13 +17,15 @@ export class FormularioPeticionComponent implements OnInit {
 
   constructor(private tipoServices:TiposService,
               private peticionServices:PeticionesService,
-              fb: FormBuilder) {
-    this.options = fb.group({
-      hideRequired: false,
-      floatLabel: 'auto',
-    });
+              private dialogRef: MatDialogRef<FormularioPeticionComponent>,
+              private apiService: ApiService,
+              @Inject(MAT_DIALOG_DATA) public data : any,
+              fb: FormBuilder,
+              public snackBar: MatSnackBar,
+              private vistaService:VistaService) {
+
   }
-  floatLabel: 'auto';
+
   titulo: string;
   descripcion: string;
 
@@ -38,11 +41,31 @@ export class FormularioPeticionComponent implements OnInit {
 
   ingresaPeticion(){
     console.log("Creando peticion "+ this.tiposeleccionado);
-    this.peticionServices.creaPeticion(this.titulo, this.descripcion, 1, this.tiposeleccionado).subscribe((r) => {
-      console.log(r);
+    this.peticionServices.creaPeticion(this.titulo, this.descripcion,  localStorage.getItem('usuarioid'), this.tiposeleccionado).subscribe((r) => {
+      console.log(r['status']);
+      if (r['status']===200) {
+        this.openSnackBar("Petición ingresada correctamente");
+        this.vistaService.setVista('peticiones');
+      }
+        this.cerrarDialogo();
 
+      },
+      error1 => {
+        console.log(error1.error);
+        this.openSnackBar("Problemas ingresando petición");
 
-    });;
+      });
   }
 
+  cerrarDialogo() {
+    this.dialogRef.close();
+  }
+
+
+  openSnackBar(message: string) {
+    console.log("abriendo snackbar");
+    this.snackBar.open(message, '', {
+      duration: 2000,
+    });
+  }
 }
